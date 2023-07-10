@@ -8,10 +8,10 @@
 						<h1>Votre profil</h1>
 					</div>
 					<div class="client-avater">
-						<img src="<?php echo base_url('assets/img/avaters/avatar1.png'); ?>" alt="">
+						<img src="<?php echo base_url('assets/img/avaters/'.$utilisateur['Photo']); ?>" alt="">
 					</div>
 					<div class="client-meta">
-						<h3> <?php echo $id; ?><span>Local shop owner</span></h3>
+						<h3> <?php echo $utilisateur['nomUtilisateur']; ?><span>Local shop owner</span></h3>
 						<p class="testimonial-body">
 							" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
 						</p>

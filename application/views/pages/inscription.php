@@ -54,14 +54,15 @@
 					</div>
 				 	<div id="form_status"></div>
 					<div class="contact-form">
-						<form action="<?php echo site_url('Controller/information_user'); ?>" method="POST" id="fruitkha-contact">
+						<form action="<?php echo site_url('Controller/insert_user'); ?>" method="POST" id="fruitkha-contact">
 							<p>
 								<input type="text" placeholder="Votre Nom" name="name" id="name">
-								<input type="password" placeholder="Mot de passe" name="poids" id="phone">
+								<input type="text" placeholder="Votre Email" name="mail" id="mail">
 
 							</p>
 							<p>
-								<input type="text" placeholder="Photo" name="poids" id="phone">
+								<input type="password" placeholder="Mot de passe" name="password" id="password">
+								<input type="text" placeholder="Photo" name="photo" id="photo">
 							</p>
 							
 							<p><input type="submit" value="Valider"></p>
