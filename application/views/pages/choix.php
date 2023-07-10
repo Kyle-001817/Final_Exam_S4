@@ -10,7 +10,7 @@
 				</div>
 			</div>
 
-			<form action="<?php echo site_url('Welcome/accueil'); ?>" method="POST" id="fruitkha-contact">
+			<form action="<?php echo site_url('Controller/proposition_alimentaire'); ?>" method="POST" id="fruitkha-contact">
 			<div class="row">
 				<div class="col-lg-6 col-md-6 text-center">
 					<div class="single-product-item">

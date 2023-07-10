@@ -22,11 +22,11 @@
 </head>
 <body>
 	<!--PreLoader-->
-    <!-- <div class="loader">
+    <div class="loader">
         <div class="loader-inner">
             <div class="circle"></div>
         </div>
-    </div> -->
+    </div>
     <!--PreLoader Ends-->
 	
 	<!-- header -->
@@ -47,7 +47,7 @@
 						<nav class="main-menu">
 							<ul>
 								<li class="current-list-item"><a href="<?php echo site_url('Welcome/accueil')?>">Home</a></li>
-								<li><a href="<?php echo site_url('Controller/information_user')?>">Insertion</a></li>
+								<li><a href="<?php echo site_url('Controller/information_user')?>">Information</a></li>
 								<li><a href="#">Pages</a>
 									<ul class="sub-menu">
 										<li><a href="404.html">404 page</a></li>
@@ -75,6 +75,7 @@
 										<li><a href="cart.html">Cart</a></li>
 									</ul>
 								</li>
+								<li><a href="<?php echo site_url('Controller/deconnexion')?>">Se Deconnecter</a></li>
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
