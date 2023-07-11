@@ -9,6 +9,7 @@
             return $array;
         }
 
+<<<<<<< HEAD
 		public function connexion_admin($mail,$mdp) {
             $requete =  "select * from Admin where email='".$mail."' and mdpAdmin='".$mdp."'";
             $result = $this->db->query($requete);
@@ -16,6 +17,8 @@
             return $array;
         }
 
+=======
+>>>>>>> fbb9cb48b08c41d350b785d5e6217a57cb8d327b
 		public function inscription($nom,$mail,$mdp,$photo){
             $requete = "insert into utilisateur values (default,'%s','%s','%s','%s')";
             $requete = sprintf($requete,$nom,$mail,$mdp,$photo);
@@ -28,6 +31,14 @@
             $this->db->query($requete);
         }
 
+<<<<<<< HEAD
+=======
+		public function insertPorte_monnaie($lesPorte_monnaie){															
+            $this->db->insert('porte_monnaie',$lesPorte_monnaie);
+			$this->db->get('porte_monnaie');
+		}
+
+>>>>>>> fbb9cb48b08c41d350b785d5e6217a57cb8d327b
 		public function SelectAllUtilisateurbyId($id) {
             $requete =  "select * from utilisateur where idUtilisateur=".$id;
             $result = $this->db->query($requete);
@@ -45,6 +56,7 @@
             return $array;
         }
 
+<<<<<<< HEAD
 		public function selectjoin($id){
 			$requete =  "select * from utilisateur join  validatecode on validatecode.idUtilisateur=utilisateur.idUtilisateur join codemonnaie on codemonnaie.idcode=validatecode.idcode where utilisateur.idUtilisateur=".$id;
 			$result = $this->db->query($requete);
@@ -64,6 +76,8 @@
             return $array;
 		}
 
+=======
+>>>>>>> fbb9cb48b08c41d350b785d5e6217a57cb8d327b
 		public function getAll($table){
             $result = array();
             $query = $this->db->query("SELECT *FROM $table");
@@ -75,6 +89,7 @@
             return $result;
         }
 
+<<<<<<< HEAD
 		//jahhhhhhhhhhhh
 		public function selectProposition_aliment($value,$reduction){
 			$niveau = $this->functions->niveau($value);
@@ -83,6 +98,20 @@
 				$requete1 =  "select * from pro_alimentaire_reduction join produits on produits.idproduits=pro_alimentaire_reduction.idproduits where niveau=".$niveau;
 			}else{
 				$requete1 =  "select * from pro_alimentaire_augment join produits on produits.idproduits=pro_alimentaire_augment.idproduits where niveau=".$niveau;
+=======
+		public function countGeneralisation($table){
+            return $this->db->count_all($table);
+        }
+
+		//jahhhhhhhhhhhh
+		public function selectProposition_aliment($value,$reduction){
+			$niveau = $this->Functions->niveau($value);
+		
+			if($reduction == 1){
+				$requete1 =  "select * from pro_alimentaire_reduction where niveau=".$niveau;
+			}else{
+				$requete1 =  "select * from pro_alimentaire_augment where niveau=".$niveau;
+>>>>>>> fbb9cb48b08c41d350b785d5e6217a57cb8d327b
 			}
 				
 			$result1 = $this->db->query($requete1);
@@ -94,10 +123,14 @@
 					'poidsInf' => $res1['poidsInf'],
 					'poidsMax' => $res1['poidsMax'],
 					'idproduits' => $res1['idproduits'],
+<<<<<<< HEAD
 					'duree' => $res1['duree'],
 					'nom_produits' =>$res1['nom_produits'],
 					'photo_produits' =>$res1['photo_produits'],
 					'prixUnitaire' =>$res1['prixUnitaire']
+=======
+					'duree' => $res1['duree']
+>>>>>>> fbb9cb48b08c41d350b785d5e6217a57cb8d327b
 				);
 				array_push($array,$ar);
 			}
@@ -105,11 +138,19 @@
 		}
 	
 		public function selectProposition_sport($value,$reduction){
+<<<<<<< HEAD
 			$niveau = $this->functions->niveau($value);
 			if($reduction == 1){
 				$requete2 =  "select * from pro_sportif_reduction join pratique on pratique.idsport = pro_sportif_reduction.idsport where niveau=".$niveau;
 			}else{
 				$requete2 =  "select * from pro_sportif_augment join pratique on pratique.idsport=pro_sportif_augment.idsport where niveau=".$niveau;
+=======
+			$niveau = $this->Functions->niveau($value);
+			if($reduction == 1){
+				$requete2 =  "select * from pro_sportif_reduction where niveau=".$niveau;
+			}else{
+				$requete2 =  "select * from pro_sportif_augment where niveau=".$niveau;
+>>>>>>> fbb9cb48b08c41d350b785d5e6217a57cb8d327b
 			}
 	
 			$result2 = $this->db->query($requete2);
@@ -121,10 +162,14 @@
 					'poidsInf' => $res1['poidsInf'],
 					'poidsMax' => $res1['poidsMax'],
 					'idsport' => $res1['idsport'],
+<<<<<<< HEAD
 					'nbr_exercice' => $res1['nbr_exercice'],
 					'nom_sport' => $res1['nom_sport'],
 					'photo_sport' => $res1['photo_sport']
 
+=======
+					'nbr_exercice' => $res1['nbr_exercice']
+>>>>>>> fbb9cb48b08c41d350b785d5e6217a57cb8d327b
 				);
 				array_push($array,$ar);
 			}
@@ -149,6 +194,7 @@
 			}
 			return $array;
 		}
+<<<<<<< HEAD
 
 		public function modifieInfo($idutilisateur,$genre, $taille, $poids,$age){
 			return $query = $this->db->query("UPDATE Information SET idUtilisateur=".$idutilisateur.", Genre=".$genre.", Taille='".$taille."',poids=".$poids." WHERE idutilisateur=".$idutilisateur);
@@ -181,10 +227,23 @@
 				$niveau = 3;
 			}if($value<=10 && $value>=5){
 				$niveau = 4;
+=======
+	
+		public function niveau($value){
+			if($value<=25 && $value>=20){
+				$niveau = 1;
+			}if($value<=20 && $value>=15){
+				$niveau = 2;
+			}if($value<=15 && $value>=10){
+				$niveau = 3;
+			}if($value<=10 && $value>=5){
+				$niveau = 5;
+>>>>>>> fbb9cb48b08c41d350b785d5e6217a57cb8d327b
 			}
 	
 			return $niveau;
 		}
+<<<<<<< HEAD
 		public function modifieCodemonnaie($etat,$code_code, $valeur, $idcode){
 			return $query = $this->db->query("UPDATE codemonnaie SET idcode = ".$idcode.", code_code='".$code_code."', etat=".$etat.",valeur=".$valeur." WHERE idcode=".$idcode);
 		}
@@ -297,6 +356,10 @@ public function insertValidateCode($idcode,$idUtilisateur)
 			}
 			
 		return $valeur-$valeur2;
+=======
+		public function modifieCodemonnaie($code_code, $valeur, $idcode){
+			return $query = $this->db->query("UPDATE codemonnaie SET idcode = ".$idcode.", code_code='".$code_code."', etat=".1.",valeur=".$valeur." WHERE idcode=".$idcode);
+>>>>>>> fbb9cb48b08c41d350b785d5e6217a57cb8d327b
 		}
 }
 ?>
