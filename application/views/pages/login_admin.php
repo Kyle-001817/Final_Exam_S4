@@ -34,8 +34,9 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>Veuillez vous inscrire ici avant</p>
-						<h1>INSCRIPTION</h1>
+						<p>Veuillez vous authentifier ici</p>
+						<h1>LOGIN ADMIN</h1>
+						<h3>adresse: admin@gmail.com ---  mdp:admin</h3>
 					</div>
 				</div>
 			</div>
@@ -49,20 +50,15 @@
 			<div class="row">
 				<div class="col-lg-8 mb-5 mb-lg-0">
 					<div class="form-title">
-						<h2>Vous avez des questions?</h2>
 						<p>Veuillez remplir ces formulaires afin de beneficier de notre service</p>
 					</div>
 				 	<div id="form_status"></div>
 					<div class="contact-form">
-						<form action="<?php echo site_url('Controller/insert_user'); ?>" method="POST" id="fruitkha-contact">
+						<form action="<?php echo site_url('Controller/connexion_admin'); ?>" method="POST" id="fruitkha-contact">
 							<p>
-								<input type="text" placeholder="Votre Nom" name="name" id="name">
-								<input type="text" placeholder="Votre Email" name="mail" id="mail">
+								<input type="email" placeholder="Votre Email" name="email" id="name">
+								<input type="password" placeholder="Votre password" name="password" id="mail">
 
-							</p>
-							<p>
-								<input type="password" placeholder="Mot de passe" name="password" id="password">
-								<input type="text" placeholder="Photo" name="photo" id="photo">
 							</p>
 							
 							<p><input type="submit" value="Valider"></p>

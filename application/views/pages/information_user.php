@@ -24,12 +24,12 @@
 					</div>
 				 	<div id="form_status"></div>
 					<div class="contact-form">
-						<form action="<?php echo site_url('Welcome/accueil'); ?>" method="POST" id="fruitkha-contact">
+						<form action="<?php echo site_url('Controller/insert_information'); ?>" method="POST" id="fruitkha-contact">
 							<p>
-								<input type="number" placeholder="Taille en cm" name="name" id="name">
-								<select name="" class="selecta" placeholder="Genre">
-									<option value="">Femme</option>
-									<option value="">Homme</option>
+								<input type="number" placeholder="Taille en cm" name="taille" id="name">
+								<select name="genre" class="selecta" placeholder="Genre">
+									<option value="1">Femme</option>
+									<option value="0">Homme</option>
 								</select>
 							</p>
 							<p>

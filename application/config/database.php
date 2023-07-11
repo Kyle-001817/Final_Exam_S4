@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => 'root',
-	'database' => 'regime',
+	'hostname' => 'mysql-regimes.alwaysdata.net',
+	'username' => 'regimes',
+	'password' => 'Kylerak47',
+	'database' => 'regimes_regimes',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

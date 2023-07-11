@@ -36,8 +36,8 @@ class Controller extends CI_Controller {
 		$this->load->model('functions');
 		$membre = $this->functions->inscription($nom, $mail, $mdp, $photo);
 		$membre1 = $this->functions->connexion($mail, $mdp);
-		$this->sesion->set_userdata('idutilisateur',$membre1);
-	
+		$_SESSION['idUtilisateur'] = $membre1;
+		$id = $_SESSION['idUtilisateur'];
 		redirect(site_url('Controller/information_user'));
 	}
 

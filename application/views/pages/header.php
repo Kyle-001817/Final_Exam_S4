@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/meanmenu.min.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/main.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/responsive.css'); ?>">
+	<script src="<?php echo base_url('assets/chart.js');?>"></script>
 
 </head>
 <body>
@@ -47,34 +48,11 @@
 						<nav class="main-menu">
 							<ul>
 								<li class="current-list-item"><a href="<?php echo site_url('Welcome/accueil')?>">Home</a></li>
-								<li><a href="<?php echo site_url('Controller/information_user')?>">Insertion</a></li>
-								<li><a href="#">Pages</a>
-									<ul class="sub-menu">
-										<li><a href="404.html">404 page</a></li>
-										<li><a href="about.html">About</a></li>
-										<li><a href="cart.html">Cart</a></li>
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="contact.html">Contact</a></li>
-										<li><a href="news.html">News</a></li>
-										<li><a href="shop.html">Shop</a></li>
-									</ul>
-								</li>
+								<li><a href="<?php echo site_url('Controller/information_user')?>">Information</a></li>
 								<li><a href="<?php echo site_url('Controller/porte_monnaie')?>">Porte-Monnaie</a></li>
-								<li><a href="news.html">News</a>
-									<ul class="sub-menu">
-										<li><a href="news.html">News</a></li>
-										<li><a href="single-news.html">Single News</a></li>
-									</ul>
+								<li><a href="<?php echo site_url('Controller/login_admin')?>">Connection Admin</a></li>
 								</li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="shop.html">Shop</a>
-									<ul class="sub-menu">
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="single-product.html">Single Product</a></li>
-										<li><a href="cart.html">Cart</a></li>
-									</ul>
-								</li>
+								<li><a href="<?php echo site_url('Controller/deconnexion')?>">Se Deconnecter</a></li>
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
