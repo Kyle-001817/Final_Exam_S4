@@ -17,7 +17,6 @@ class Controller extends CI_Controller {
 		$genre = $this->input->post('genre');
 		$poids = $this->input->post('poids');
 		$age = $this->input->post('age');
-<<<<<<< HEAD
 		$exists = $this->functions->selectInformationbyiD($idUtil);
 
 		if($exists == null){
@@ -27,10 +26,6 @@ class Controller extends CI_Controller {
 			$this->functions->modifieInfo($idUtil,$genre,$taille,$poids,$age);
 			redirect(site_url('Controller/choix'));
 		}
-=======
-		$genre = $this->functions->insertInfo($idUtil,$genre,$taille,$poids,$age);
-		redirect(site_url('Controller/choix'));
->>>>>>> fbb9cb48b08c41d350b785d5e6217a57cb8d327b
 	}
 
 	public function insert_user(){
@@ -40,12 +35,9 @@ class Controller extends CI_Controller {
 		$photo = $this->input->post('photo');
 		$this->load->model('functions');
 		$membre = $this->functions->inscription($nom, $mail, $mdp, $photo);
-<<<<<<< HEAD
 		$membre1 = $this->functions->connexion($mail, $mdp);
-		$this->sesion->set_userdata('idutilisateur',$membre1);
-	
-=======
->>>>>>> fbb9cb48b08c41d350b785d5e6217a57cb8d327b
+		$_SESSION['idUtilisateur'] = $membre1;
+		$id = $_SESSION['idUtilisateur'];
 		redirect(site_url('Controller/information_user'));
 	}
 
@@ -54,7 +46,6 @@ class Controller extends CI_Controller {
 		$this->load->view('template', array('content'=>'choix'));
 	}
 
-<<<<<<< HEAD
 
 	public function porte_monnaie(){
 			$this->load->model('functions');
@@ -73,19 +64,6 @@ class Controller extends CI_Controller {
 			);
 			$this->load->view('template', array('content'=>'porte_monnaie', 'utilisateur' => $variable, 'allcode'=>$allcode, 'somme'=>$somme));
 	}
-=======
-	public function porte_monnaie()
-	{
-		$id = $this->session->userdata('idUtilisateur');
-		$nomUtilisateur = $id['nomUtilisateur'];
-		$photo = $id['Photo'];
-		$variable = Array(
-			'nomUtilisateur' => $nomUtilisateur,
-			'Photo' => $photo,
-		);
-		$this->load->view('template', array('content'=>'porte_monnaie', 'utilisateur' => $variable));
-	}	
->>>>>>> fbb9cb48b08c41d350b785d5e6217a57cb8d327b
 
 	public function connexion()
 	{
@@ -110,7 +88,6 @@ class Controller extends CI_Controller {
 		redirect('Welcome/index');
 	}
 	//JAHHHHH
-<<<<<<< HEAD
 
 	public function proposition_alimentaire(){
 		$this->load->view('template', array('content'=>'proposition_alimentaire'));
@@ -134,22 +111,10 @@ class Controller extends CI_Controller {
 		$data = array(
 			'somme' => $somme,
 			'triplets' => $triplets,
-=======
-	public function proposition_alimentaire(){
-		$this->load->view('template', array('content'=>'proposition_alimentaire'));
-	}
-	public function proposition($value,$reduction){
-		$this->load->model('functions');
-		$prop_aliment = $this->functions->selectProposition_aliment($value,$reduction);
-		$prop_sport = $this->functions->selectProposition_sport($value,$reduction);
-		$duree = $this->functions->selectduree_prop($prop_aliment['duree']);
-		$data = array(
->>>>>>> fbb9cb48b08c41d350b785d5e6217a57cb8d327b
 			'prop_aliment' => $prop_aliment,
 			'prop_sport' => $prop_sport,
 			'duree' => $duree
 		);
-<<<<<<< HEAD
 		$array = array();
 		$this->load->view('template', array('content'=>'proposition_alimentaire','proposition'=>$data));
 	}
@@ -236,8 +201,5 @@ class Controller extends CI_Controller {
 		$idUtil = $this->session->userdata('idUtilisateur');
 		$this->functions->insertPorte_monnaie(0,$idUtil['idUtilisateur'], $debit);
 		redirect('Welcome/accueil');
-=======
-		$this->load->view('template', array('content'=>'proposition','proposition'=>$data));
->>>>>>> fbb9cb48b08c41d350b785d5e6217a57cb8d327b
 	}
 }

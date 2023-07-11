@@ -23,7 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+<<<<<<< HEAD
+$config['base_url'] = 'http://regimes.alwaysdata.net';
+=======
 $config['base_url'] = 'http://localhost/CodeIgniter/';
+>>>>>>> fbb9cb48b08c41d350b785d5e6217a57cb8d327b
 
 /*
 |--------------------------------------------------------------------------
